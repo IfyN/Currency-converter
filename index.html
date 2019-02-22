@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie-edge"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <style>
+body  {
+padding-top: 100px;
+background: linear-gradient(to right, #FFF8DC , #DEB887);
+color: #000;
+        }
+    </style>
+    
+<title>Naira Converter</title>
+
+    
+</head>
+    
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <h1 class="display-4 text-center mb-4">
+                        <form>
+                            <div class="form-group">
+                                <input id="cashInput" type="number" class="form-control form-control-lg" placeholder="Enter amount in Naira...">
+                            </div>
+                        </form>
+                        
+                        <div id="output">
+                            <div class="card card-primary mb-2" style="background-color:#FAEBD7">
+                                <div class="card-block">
+                                    <h4>Canadian Dollars:</h4>
+                                    <div id="cdOutput">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card card-success mb-2" style="background-color:#FFDEAD">
+                                <div class="card-block">
+                                    <h4>US Dollars:</h4>
+                                    <div id="usdOutput">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-2" style="background-color:#F4A460">
+                                <div class="card-block">
+                                    <h4>Pound Sterling:</h4>
+                                    <div id="psOutput">
+                                    </div>
+                                </div>
+                            </div>
+                                                        
+
+                            
+                        </div>
+                    </h1>
+                </div>
+            </div>
+        </div>    
+        
+        
+        <script>
+            
+            document.getElementById('output').style.visibility = 'hidden';
+            document.getElementById('cashInput').addEventListener('input', function(e){document.getElementById('output').style.visibility = 'visible';
+                var naira = e.target.value;
+                
+                document.getElementById('cdOutput').innerHTML = naira*0.0022046;
+                
+                document.getElementById('usdOutput').innerHTML = naira*0.00276706;
+                
+                document.getElementById('psOutput').innerHTML = naira*0.00214675;
+            });
+            
+        </script>>
+        </body>
+</html>
